@@ -7,11 +7,11 @@
       "default_icon": "icon.png"
     },
     "background" : {
-      "scripts" : ["background.js"]
+      "scripts" : ["background.js"],
+      "persistent": false
     },
+
     "permissions": [
-      "http://nbatopshot.com/*",
-      "https://nbatopshot.com/*",
       "tabs",
       "activeTab" 
     ]
