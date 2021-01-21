@@ -29,7 +29,7 @@ var init = function() {
         }
         options[0].selected = true;
         var newStyle = document.createElement('style');
-        newStyle.innerHTML = '.single-digit {color:red !important} .double-digit {color: green !important} .triple-digit {color:blue !important}';
+        newStyle.innerHTML = '.single-digit {color:magenta !important} .double-digit {color: red !important} .triple-digit {color:blue !important}';
         document.querySelector('head').append(newStyle);
 };
 init();
