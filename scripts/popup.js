@@ -3,5 +3,4 @@ function hello() {
       file: 'settings.js'
     }); 
   }
-  
- document.getElementById('clickme').addEventListener('click', hello);
+document.getElementById('toggle').addEventListener('click', hello);
