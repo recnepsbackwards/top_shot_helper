@@ -1,0 +1,9 @@
+.single-digit {
+    color:magenta !important;
+} 
+.double-digit {
+    color: red !important;
+} 
+.triple-digit {
+    color:blue !important;
+}

@@ -4,10 +4,26 @@
     "version": "1.0",
     "description": "Top Shot Sniper",
     "browser_action": {
-      "default_icon": "icon.png"
+      "default_icon": "icon1.png",
+      "default_popup": "popup.html"
     },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://recnepsbackwards.github.io/*"        
+        ],
+        "js": [
+          "scripts/content_script.js"
+        ],
+        "css": [
+          "styles/styles.css"
+        ]
+      }
+    ],
     "background" : {
-      "scripts" : ["background.js"],
+      "scripts" : [
+        "scripts/background.js"
+      ],
       "persistent": false
     },
 
