@@ -1,5 +1,50 @@
+<!DOCTYPE html>
 <html>
-    <h1>test</h1>
-    <input type="checkbox" id="toggle"></button>
-    <script src="popup.js" type="text/javascript"></script>
+    <head>
+        <title>Top Shot Sniper Options</title>
+        <link rel="stylesheet" href="styles/popup_styles.css">
+    </head>
+    <body>
+        <div class="content">
+            <h1>Top Shot Sniper Options</h1>
+            <div class="container">
+                <label for="toggle"><b>Sniper Mode:</b></label>
+                <input type="checkbox" id="toggle">
+            </div>
+            <div class="container">
+                <h3>Custom Color 1 Digit Serials:</h3>
+                <select id="oneDigitColor">
+                    <option value="red">red</option>
+                    <option value="green">green</option>
+                    <option value="blue">blue</option>
+                    <option value="magenta">magenta</option>
+                </select>
+            </div>
+            <div class="container">
+                <h3>Custom Color 2 Digit Serials:</h3>
+                <select id="twoDigitColor">
+                    <option value="red">red</option>
+                    <option value="green">green</option>
+                    <option value="blue">blue</option>
+                    <option value="magenta">magenta</option>
+                </select>
+            </div>
+            <div class="container">
+                <h3>Custom Color 3 Digit Serials:</h3>
+                <select id="threeDigitColor">
+                    <option value="red">red</option>
+                    <option value="green">green</option>
+                    <option value="blue">blue</option>
+                    <option value="magenta">magenta</option>
+                </select>
+            </div>
+            <div class="container">
+                <h3>Donate:</h3>
+                <div id="donate"><a href="https://www.nbatopshot.com/">Gift a moment to @spencer</a></div>
+                <div id="status"></div>
+                <button id="save">Save</button>
+            </div>
+        </div>
+        <script src="scripts/options.js"></script>
+    </body>
 </html>
