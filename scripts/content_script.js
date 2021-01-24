@@ -44,14 +44,9 @@ chrome.storage.sync.get(['oneDigitColor', 'twoDigitColor', 'threeDigitColor', 't
     var color3 = items['threeDigitColor'];
     var toggle = items['toggle'];
     if (toggle === true) {
-        setTimeout(function(){
-            var dropdown = document.getElementById('moment-detailed-serialNumber');
-            if(dropdown !== null) {
-                init(dropdown.options, color1, color2, color3);
-            }
-        }, 3000);
+        var dropdown = document.getElementById('moment-detailed-serialNumber');
+        if(dropdown !== null) {
+            init(dropdown.options, color1, color2, color3);
+        }
     }
-});
-document.addEventListener("pjax:end", function() {
-    // run code/call function
 });

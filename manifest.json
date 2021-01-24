@@ -35,6 +35,9 @@
     "permissions": [
       "tabs",
       "activeTab",
-      "storage" 
+      "storage",
+      "notifications",
+      "http://*/",
+      "https://*/" 
     ]
 }
