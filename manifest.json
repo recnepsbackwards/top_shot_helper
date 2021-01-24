@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Top Shot Sniper",
-    "version": "1.0",
+    "version": "0.0.0.1",
     "description": "Top Shot Sniper",
     "browser_action": {
       "default_popup": "popup.html"
