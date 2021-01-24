@@ -52,3 +52,6 @@ chrome.storage.sync.get(['oneDigitColor', 'twoDigitColor', 'threeDigitColor', 't
         }, 3000);
     }
 });
+document.addEventListener("pjax:end", function() {
+    // run code/call function
+});
