@@ -37,7 +37,8 @@
       "activeTab",
       "storage",
       "notifications",
-      "http://*/",
-      "https://*/" 
+      "https://www.nbatopshot.com/listings/p2p/*",
+      "http://www.nbatopshot.com/listings/p2p/*",
+      "https://recnepsbackwards.github.io/*"
     ]
 }
