@@ -17,6 +17,7 @@ Top Shot Sniper sorts listings on NBA Top Shot by price instead of serial number
 * Turn on Developer mode in the top right
 * Click "Load unpacked" on the top left
 * Navigate to the Top Shot Sniper folder that you previously unzipped
+    * Make sure you are on the lowest folder level of the Top Shot Sniper
 * Click "Select Folder"
 * You should now see Top Shot Sniper as a chrome extension
 
