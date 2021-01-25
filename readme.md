@@ -9,6 +9,8 @@ Top Shot Sniper sorts listings on NBA Top Shot by price instead of serial number
 * Click "Code"
 * Click "Download ZIP"
 * Once download is finished, unzip the .zip
+    * Unzip by right clicking the .zip and clicking "Extract files"
+    * If you do not have this option available, download Winzip for free: https://www.winzip.com/win/en/
 * Open Chrome
 * Click the puzzle piece on the top right
 * Click "Manage extensions"
