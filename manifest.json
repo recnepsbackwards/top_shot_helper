@@ -26,9 +26,6 @@
         ],
         "js": [
           "scripts/content_script.js"
-        ],
-        "css": [
-          "styles/styles.css"
         ]
       }
     ],
