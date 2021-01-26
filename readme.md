@@ -6,6 +6,7 @@ Top Shot Sniper sorts listings on NBA Top Shot by price instead of serial number
 ## How to Install:
 #### Must have Chrome web browser installed
 #### Only usable on Chrome as a Chrome extension
+#### Custom colors only available for Windows users
 * Click "Code"
 * Click "Download ZIP"
 * Once download is finished, unzip the .zip
@@ -26,6 +27,7 @@ Top Shot Sniper sorts listings on NBA Top Shot by price instead of serial number
 * Click on Top Shot Sniper
 * Click the check box to turn on Sniper mode
 * Change your custom colors as desired
+  * Only available for Windows users
 * Click Save
 * Go to https://www.nbatopshot.com/ and find a listing in the marketplace you would like to try and snipe
 * You should now see the listings sorted by price with the serials highlighted by the custom colors selected
