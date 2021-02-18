@@ -1,7 +1,7 @@
 var init = function(options, c1, c2, c3) {
     var optionsArray = [];
-    var optionsText = options[i].innerText;
     for (var i = 0; i < options.length; i++) {
+        var optionsText = options[i].innerText;
         var digit = options[i].value.length;
         if (digit === 1) {
             options[i].classList.add('single-digit');
