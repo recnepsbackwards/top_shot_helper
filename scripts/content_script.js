@@ -63,13 +63,40 @@ var colorChanges = function(options, colors, toggles) {
         document.querySelector('head').append(newStyle);
         newStyle.innerHTML = dynamicStyles;
     }
+};
+var addText = function(options, text) {
+    for (var i = 0; i < options.length; i++) {
+        var digit = options[i].value.length;
+        var data = options[i].dataset.text;
+        if (digit === 1 && data === undefined) {
+            options[i].innerText += " - " + text[0];
+            options[i].dataset.text = "true";
+        }
+        else if (digit === 2 && data === undefined) {
+            options[i].innerText += " - " + text[1];
+            options[i].dataset.text = "true";
+        }
+        else if (digit === 3 && data === undefined) {
+            options[i].innerText += " - " + text[2];
+            options[i].dataset.text = "true";
+        }
+        else if (digit === 4 && data === undefined) {
+            options[i].innerText += " - " + text[3];
+            options[i].dataset.text = "true";
+        }
+    }
 }
-chrome.storage.sync.get(['oneDigitColor', 'twoDigitColor', 'threeDigitColor', 'fourDigitColor', 'toggle', 'toggle1', 'toggle2', 'toggle3', 'toggle4'], function(items) {
+chrome.storage.sync.get(['oneDigitColor', 'twoDigitColor', 'threeDigitColor', 'fourDigitColor', 'oneDigitText', 'twoDigitText', 'threeDigitText', 'fourDigitText', 'toggle', 'toggle1', 'toggle2', 'toggle3', 'toggle4'], function(items) {
     var color1 = items['oneDigitColor'];
     var color2 = items['twoDigitColor'];
     var color3 = items['threeDigitColor'];
     var color4 = items['fourDigitColor'];
     var colorArray = [];
+    var text1 = items['oneDigitText'];
+    var text2 = items['twoDigitText'];
+    var text3 = items['threeDigitText'];
+    var text4 = items['fourDigitText'];
+    var textArray = [];
     var toggle = items['toggle'];
     var toggle1 = items['toggle1'];
     var toggle2 = items['toggle2'];
@@ -79,9 +106,13 @@ chrome.storage.sync.get(['oneDigitColor', 'twoDigitColor', 'threeDigitColor', 'f
     var dropdown = document.getElementById('moment-detailed-serialNumber');
     toggleArray.push(toggle1, toggle2, toggle3, toggle4);
     colorArray.push(color1, color2, color3, color4);
+    textArray.push(text1, text2, text3, text4);
     if(dropdown !== null) { 
         if (toggle === true) {
             sortDropdown(dropdown.options);
+        }
+        if(text1 !== "" || text2 !== "" || text3 !== "" || text4 !== "") {
+            addText(dropdown, textArray);
         }
         colorChanges(dropdown, colorArray, toggleArray);
     }
