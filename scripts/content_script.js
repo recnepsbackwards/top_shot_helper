@@ -64,23 +64,23 @@ var colorChanges = function(options, colors, toggles) {
         newStyle.innerHTML = dynamicStyles;
     }
 };
-var addText = function(options, text) {
+var addText = function(options, text, toggles) {
     for (var i = 0; i < options.length; i++) {
         var digit = options[i].value.length;
         var data = options[i].dataset.text;
-        if (digit === 1 && data === undefined) {
+        if (digit === 1 && toggles[0] === true && data === undefined && text[0] !== "") {
             options[i].innerText += " - " + text[0];
             options[i].dataset.text = "true";
         }
-        else if (digit === 2 && data === undefined) {
+        else if (digit === 2 &&  toggles[1] === true && data === undefined && text[1] !== "") {
             options[i].innerText += " - " + text[1];
             options[i].dataset.text = "true";
         }
-        else if (digit === 3 && data === undefined) {
+        else if (digit === 3 &&  toggles[2] === true && data === undefined && text[2] !== "") {
             options[i].innerText += " - " + text[2];
             options[i].dataset.text = "true";
         }
-        else if (digit === 4 && data === undefined) {
+        else if (digit === 4 &&  toggles[3] === true && data === undefined && text[3] !== "") {
             options[i].innerText += " - " + text[3];
             options[i].dataset.text = "true";
         }
@@ -112,7 +112,7 @@ chrome.storage.sync.get(['oneDigitColor', 'twoDigitColor', 'threeDigitColor', 'f
             sortDropdown(dropdown.options);
         }
         if(text1 !== "" || text2 !== "" || text3 !== "" || text4 !== "") {
-            addText(dropdown, textArray);
+            addText(dropdown, textArray, toggleArray);
         }
         colorChanges(dropdown, colorArray, toggleArray);
     }

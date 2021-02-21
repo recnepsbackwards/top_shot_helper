@@ -38,7 +38,7 @@ Top Shot Helper sorts listings on NBA Top Shot by price instead of serial number
 ### Refresh the page to see any settings changes take effect.
 
 ## FAQ:
-* Why isn't Helper Mode working?
+* Why isn't it working?
   * Open the Top Shot Helper and see if the "Sort Dropdowns" checkbox is checked. If not, turn it on and click "Save".
   * Refresh the page after making the changes to the settings to see if the issue is resolved.
 
