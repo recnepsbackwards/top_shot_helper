@@ -1,3 +1,6 @@
+#### Contact: spencer#1698 on NBA Top Shot Discord
+#### Gift a moment to the developer: https://www.nbatopshot.com/user/@spencer
+
 # TOP SHOT SNIPER
 
 Purpose:
@@ -41,10 +44,10 @@ Top Shot Sniper sorts listings on NBA Top Shot by price instead of serial number
 
 * How do I know this isn't a virus?
   * The code is open source and I have submitted this to Google for approval on the official chrome extension store.
-  * While waiting for the approval process, I have decided to allow anyone who wants to use this extension now to download it directly here.
+  * Now officially on chrome store: https://chrome.google.com/webstore/detail/top-shot-sniper/leojoakcmcfpoaojibhkepbglljbjjjp?hl=en&authuser=1
 
 * Can you add additional features?
   * Yes this is just the first version, I would consider it a beta. If you have recommendations, contact @spencer on NBA Top Shot Discord.
 
-#### Contact: @spencer on NBA Top Shot Discord
+#### Contact: spencer#1698 on NBA Top Shot Discord
 #### Gift a moment to the developer: https://www.nbatopshot.com/user/@spencer
