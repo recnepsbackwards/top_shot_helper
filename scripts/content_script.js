@@ -1,6 +1,7 @@
 var init = function(options, c1, c2, c3) {
     var optionsArray = [];
     for (var i = 0; i < options.length; i++) {
+        var optionsText = options[i].innerText;
         var digit = options[i].value.length;
         if (digit === 1) {
             options[i].classList.add('single-digit');
@@ -11,8 +12,13 @@ var init = function(options, c1, c2, c3) {
         else if (digit === 3) {
             options[i].classList.add('triple-digit');
         }
-        options[i].price = options[i].innerText.split('$')[1];
-        optionsArray.push(options[i]);
+        if(optionsText.includes('$')) {
+            options[i].price = optionsText.split('$')[1];
+            optionsArray.push(options[i]);
+        }
+        else {
+            options[i].remove();
+        }
     }
     optionsArray = optionsArray.sort(function (a, b) {           
         if (parseInt(a.price.replace(/,/g, '')) === parseInt(b.price.replace(/,/g, ''))) {
