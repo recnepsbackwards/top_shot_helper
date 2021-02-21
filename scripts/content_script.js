@@ -17,7 +17,8 @@ var init = function(options, c1, c2, c3) {
             optionsArray.push(options[i]);
         }
         else {
-            options[i].remove();
+            options[i].price = '$0';
+            optionsArray.push(options[i]);
         }
     }
     optionsArray = optionsArray.sort(function (a, b) {           
