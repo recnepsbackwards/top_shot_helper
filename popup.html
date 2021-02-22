@@ -1,46 +1,67 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Top Shot Sniper Options</title>
+        <title>Top Shot Helper Options</title>
         <link rel="stylesheet" href="styles/popup_styles.css">
     </head>
     <body>
         <div class="content">
-            <h1>Top Shot Sniper Options</h1>
+            <h1>Top Shot Helper Options</h1>
             <div class="container">
-                <label for="toggle"><b>Sniper Mode:</b></label>
+                <label for="toggle"><b>Sort Dropdown:</b></label>
                 <input type="checkbox" id="toggle">
             </div>
-            <div class="container">
-                <h3>Custom Color 3 Digit Serials:</h3>
-                <select id="threeDigitColor">
-                    <option value="red">red</option>
-                    <option value="green">green</option>
-                    <option value="blue">blue</option>
-                    <option value="magenta">magenta</option>
-                </select>
-            </div>
-            <div class="container">
-                <h3>Custom Color 2 Digit Serials:</h3>
-                <select id="twoDigitColor">
-                    <option value="red">red</option>
-                    <option value="green">green</option>
-                    <option value="blue">blue</option>
-                    <option value="magenta">magenta</option>
-                </select>
-            </div>
-            <div class="container">
-                <h3>Custom Color 1 Digit Serials:</h3>
-                <select id="oneDigitColor">
-                    <option value="red">red</option>
-                    <option value="green">green</option>
-                    <option value="blue">blue</option>
-                    <option value="magenta">magenta</option>
-                </select>
+            <div class="windows">
+                <div class="container">
+                    <h3>Customize 4 Digit Serials: <input type="checkbox" id="toggle4"></h3>
+                    <div>
+                        <label for="fourDigitColor">Color (Windows Only): </label>
+                        <input type="color" id="fourDigitColor" name="head" value="#00FF00" disabled>
+                    </div>
+                    <div>
+                        <label for="fourDigitText">Text: </label>
+                        <input maxlength="20" type="text" id="fourDigitText" disabled>
+                    </div> 
+                </div>
+                <div class="container">
+                    <h3>Customize 3 Digit Serials: <input type="checkbox" id="toggle3"></h3>
+                    <div>
+                        <label for="threeDigitColor">Color (Windows Only): </label>
+                        <input type="color" id="threeDigitColor" name="head" value="#0000FF" disabled>
+                    </div>
+                    <div>
+                        <label for="threeDigitText">Text: </label>
+                        <input maxlength="20" type="text" id="threeDigitText" disabled>
+                    </div> 
+                </div>
+                <div class="container">
+                    <h3>Customize 2 Digit Serials: <input type="checkbox" id="toggle2"></h3>
+                    <div>
+                        <label for="twoDigitColor">Color (Windows Only): </label>
+                        <input type="color" id="twoDigitColor" name="head" value="#FF0000" disabled>
+                    </div>
+                    <div>
+                        <label for="twoDigitText">Text: </label>
+                        <input maxlength="20" type="text" id="twoDigitText" disabled>
+                    </div> 
+                </div>
+                <div class="container">
+                    <h3>Customize 1 Digit Serials: <input type="checkbox" id="toggle1"></h3>
+                    <div>
+                        <label for="oneDigitColor">Color (Windows Only): </label>
+                        <input type="color" id="oneDigitColor" name="head" value="#FF00FF" disabled>
+                    </div>
+                    <div>
+                        <label for="oneDigitText">Text: </label>
+                        <input maxlength="20" type="text" id="oneDigitText" disabled>
+                    </div> 
+                </div>
             </div>
             <div class="container">
                 <h3>Donate:</h3>
                 <div id="donate"><a target="_blank" href="https://www.nbatopshot.com/user/@spencer">Gift a moment to @spencer</a></div>
+                <h3>Discord Contact:</h3>
+                <div id="contact">spencer#1698</div>
                 <div id="status"></div>
                 <button id="save">Save</button>
             </div>
