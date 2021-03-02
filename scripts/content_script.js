@@ -54,8 +54,9 @@ var colorChanges = function(options, colors, toggles) {
     if(toggles[3] === true) {
         dynamicStyles += '.four-digit {color:'+colors[3]+' !important}';
     }
-    if(document.getElementById('helperStyles')) {
-        this.innerHTML = dynamicStyles;
+    var helperStyles = document.getElementById('helperStyles');
+    if(helperStyles) {
+        helperStyles.innerHTML = dynamicStyles;
     }
     else {
         var newStyle = document.createElement('style');
@@ -103,17 +104,20 @@ chrome.storage.sync.get(['oneDigitColor', 'twoDigitColor', 'threeDigitColor', 'f
     var toggle3 = items['toggle3'];
     var toggle4 = items['toggle4'];
     var toggleArray = [];
-    var dropdown = document.getElementById('moment-detailed-serialNumber');
     toggleArray.push(toggle1, toggle2, toggle3, toggle4);
     colorArray.push(color1, color2, color3, color4);
     textArray.push(text1, text2, text3, text4);
-    if(dropdown !== null) { 
-        if (toggle === true) {
-            sortDropdown(dropdown.options);
+    var checkExist = setInterval(function() {
+        var dropdown = document.getElementById('moment-detailed-serialNumber');
+        if (dropdown !== null && dropdown.length) {
+            if (toggle === true) {
+                sortDropdown(dropdown.options);
+            }
+            if(text1 !== "" || text2 !== "" || text3 !== "" || text4 !== "") {
+                addText(dropdown, textArray, toggleArray);
+            }
+            colorChanges(dropdown, colorArray, toggleArray);
+           clearInterval(checkExist);
         }
-        if(text1 !== "" || text2 !== "" || text3 !== "" || text4 !== "") {
-            addText(dropdown, textArray, toggleArray);
-        }
-        colorChanges(dropdown, colorArray, toggleArray);
-    }
+    }, 100);  
 });
