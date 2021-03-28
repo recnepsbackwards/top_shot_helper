@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Top Shot Helper",
-    "version": "0.0.0.4",
+    "version": "0.0.0.5",
     "description": "Top Shot Helper",
     "browser_action": {
       "default_popup": "popup.html"
@@ -22,7 +22,8 @@
         "matches": [
           "https://www.nbatopshot.com/listings/p2p/*",
           "http://www.nbatopshot.com/listings/p2p/*",
-          "https://recnepsbackwards.github.io/*"        
+          "https://nbatopshot.com/listings/p2p/*",
+          "http://nbatopshot.com/listings/p2p/*"        
         ],
         "js": [
           "scripts/content_script.js"
@@ -35,6 +36,7 @@
       "storage",
       "https://www.nbatopshot.com/listings/p2p/*",
       "http://www.nbatopshot.com/listings/p2p/*",
-      "https://recnepsbackwards.github.io/*"
+      "https://nbatopshot.com/listings/p2p/*",
+      "http://nbatopshot.com/listings/p2p/*"  
     ]
 }

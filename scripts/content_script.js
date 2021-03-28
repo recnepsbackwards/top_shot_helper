@@ -1,33 +1,6 @@
-var sortDropdown = function(options) {
-    var optionsArray = [];
-    for (var i = 0; i < options.length; i++) {
-        var optionsText = options[i].innerText;
-        if(optionsText.includes('$')) {
-            options[i].price = optionsText.split('$')[1];
-            optionsArray.push(options[i]);
-        }
-        else {
-            options[i].price = '$0';
-            optionsArray.push(options[i]);        
-        }
-    }
-    optionsArray = optionsArray.sort(function (a, b) {           
-        if (parseInt(a.price.replace(/,/g, '')) === parseInt(b.price.replace(/,/g, ''))) {
-            return 0;
-        }
-        else {
-            return (parseInt(a.price.replace(/,/g, '')) < parseInt(b.price.replace(/,/g, ''))) ? -1 : 1;
-        }   
-    });
-
-    for (var i = 0; i <= options.length; i++) {            
-        options[i] = optionsArray[i];
-    }
-    options[0].selected = true;
-};
 var colorChanges = function(options, colors, toggles) {
     for (var i = 0; i < options.length; i++) {
-        var digit = options[i].value.length;
+        var digit = options[i].innerText.length - 1;
         if (digit === 1) {
             options[i].classList.add('one-digit');
         }
@@ -65,9 +38,20 @@ var colorChanges = function(options, colors, toggles) {
         newStyle.innerHTML = dynamicStyles;
     }
 };
+var adjustModal = function() {
+    var helperStyles2 = document.getElementById('helperStyles2');
+    if(helperStyles2) {
+    }
+    else {
+        var newStyle2 = document.createElement('style');
+        newStyle2.id = "helperStyles2";
+        document.querySelector('head').append(newStyle2);
+        newStyle2.innerHTML = ".ReactModal__Content {width: 85% !important} .ReactModal__Content [class*='ButtonBase__StyledButton'] {padding: 5px 24px !important;}";
+    }
+};
 var addText = function(options, text, toggles) {
     for (var i = 0; i < options.length; i++) {
-        var digit = options[i].value.length;
+        var digit = options[i].innerText.length - 1;
         var data = options[i].dataset.text;
         if (digit === 1 && toggles[0] === true && data === undefined && text[0] !== "") {
             options[i].innerText += " - " + text[0];
@@ -86,7 +70,7 @@ var addText = function(options, text, toggles) {
             options[i].dataset.text = "true";
         }
     }
-}
+};
 chrome.storage.sync.get(['oneDigitColor', 'twoDigitColor', 'threeDigitColor', 'fourDigitColor', 'oneDigitText', 'twoDigitText', 'threeDigitText', 'fourDigitText', 'toggle', 'toggle1', 'toggle2', 'toggle3', 'toggle4'], function(items) {
     var color1 = items['oneDigitColor'];
     var color2 = items['twoDigitColor'];
@@ -98,7 +82,6 @@ chrome.storage.sync.get(['oneDigitColor', 'twoDigitColor', 'threeDigitColor', 'f
     var text3 = items['threeDigitText'];
     var text4 = items['fourDigitText'];
     var textArray = [];
-    var toggle = items['toggle'];
     var toggle1 = items['toggle1'];
     var toggle2 = items['toggle2'];
     var toggle3 = items['toggle3'];
@@ -108,16 +91,14 @@ chrome.storage.sync.get(['oneDigitColor', 'twoDigitColor', 'threeDigitColor', 'f
     colorArray.push(color1, color2, color3, color4);
     textArray.push(text1, text2, text3, text4);
     var checkExist = setInterval(function() {
-        var dropdown = document.getElementById('moment-detailed-serialNumber');
-        if (dropdown !== null && dropdown.length) {
-            if (toggle === true) {
-                sortDropdown(dropdown.options);
-            }
+        var list = document.querySelector('[class*="SelectTable__StyledOptions"]');
+        if (list !== null) {
+            var serials = document.querySelectorAll('[class*="SelectTable__StyledSerial"] a');
+            colorChanges(serials, colorArray, toggleArray);
+            adjustModal();
             if(text1 !== "" || text2 !== "" || text3 !== "" || text4 !== "") {
-                addText(dropdown, textArray, toggleArray);
+                addText(serials, textArray, toggleArray);
             }
-            colorChanges(dropdown, colorArray, toggleArray);
-           clearInterval(checkExist);
         }
     }, 100);  
 });

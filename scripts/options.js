@@ -16,7 +16,6 @@ function save_options() {
   var disabledText2 = document.getElementById('twoDigitText').disabled;
   var disabledText3 = document.getElementById('threeDigitText').disabled;
   var disabledText4 = document.getElementById('fourDigitText').disabled;
-  var toggleChoice = document.getElementById('toggle').checked;
   var toggleChoice1 = document.getElementById('toggle1').checked;
   var toggleChoice2 = document.getElementById('toggle2').checked;
   var toggleChoice3 = document.getElementById('toggle3').checked;
@@ -38,7 +37,6 @@ function save_options() {
     disabledText2: disabledText2,
     disabledText3: disabledText3,
     disabledText4: disabledText4,
-    toggle: toggleChoice,
     toggle1: toggleChoice1,
     toggle2: toggleChoice2,
     toggle3: toggleChoice3,
@@ -74,7 +72,6 @@ function restore_options() {
       disabledText2: true,
       disabledText3: true,
       disabledText4: true,
-      toggle: false,
       toggle1: false,
       toggle2: false,
       toggle3: false,
@@ -96,7 +93,6 @@ function restore_options() {
       document.getElementById('twoDigitText').disabled = items.disabledText2;
       document.getElementById('threeDigitText').disabled = items.disabledText3;
       document.getElementById('fourDigitText').disabled = items.disabledText4;
-      document.getElementById('toggle').checked = items.toggle;
       document.getElementById('toggle1').checked = items.toggle1;
       document.getElementById('toggle2').checked = items.toggle2;
       document.getElementById('toggle3').checked = items.toggle3;
